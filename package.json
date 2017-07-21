@@ -2,6 +2,7 @@
   "name": "ngx-rx-if",
   "version": "0.0.1",
   "license": "MIT",
+  "description": "An implementation of conditional reactive directive based on @ngrx/store (Redux)",
   "keywords": [
     "angular",
     "angular2",

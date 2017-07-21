@@ -1,6 +1,6 @@
 # ngx-rx-if
 
-An implementation of reactive conditional directive based on @ngrx/store (Redux) [Angular 4.3.1 compatible].
+An implementation of conditional reactive directive based on @ngrx/store (Redux) [Angular 4.3.1 compatible].
 
 ## Installation
 
