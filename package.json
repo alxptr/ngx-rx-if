@@ -1,0 +1,70 @@
+{
+  "name": "ngx-rx-if",
+  "version": "0.0.1",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular4",
+    "rx",
+    "rxjs",
+    "ngIf",
+    "ng-if",
+    "rxIf",
+    "rx-if"
+  ],
+  "author": "Alex Poter <a.poterenko@gmail.com>",
+  "scripts": {
+    "clean": "npm cache clean",
+    "bundle": "npm run compile && npm run rollup && npm run rollup:min",
+    "compile": "node_modules/.bin/ngc -p tsconfig.json",
+    "rollup": "rollup -c rollup.conf.js",
+    "rollup:min": "rollup -c rollup-uglify.conf.js",
+    "deploy": "npm install && npm run bundle && npm publish ./"
+  },
+  "peerDependencies": {
+    "@angular/core": "~4.3.1",
+
+    "@ngrx/core": "~1.2.0",
+    "@ngrx/store": "~2.2.1",
+
+    "core-js": "^2.4.1",
+    "rxjs": "~5.4.2",
+    "zone.js": "~0.8.14"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "~4.3.1",
+    "@angular/compiler": "~4.3.1",
+    "@angular/core": "~4.3.1",
+
+    "@ngrx/core": "~1.2.0",
+    "@ngrx/store": "~2.2.1",
+
+    "@types/core-js": "~0.9.28",
+    "@types/node": "~6.0.38",
+    "typescript": "2.3.4",
+
+    "core-js": "^2.4.1",
+    "rxjs": "~5.4.2",
+    "zone.js": "~0.8.14",
+
+    "rollup": "~0.36.3",
+    "rollup-plugin-commonjs": "~7.0.0",
+    "rollup-plugin-includepaths": "~0.1.8",
+    "rollup-plugin-uglify": "~1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apoterenko/ngx-rx-if.git"
+  },
+  "bugs": {
+    "url": "https://github.com/apoterenko/ngx-rx-if/issues"
+  },
+  "module": "index.js",
+  "typings": "index.d.ts",
+  "main": "bundles/ngx-rx-if.umd.js",
+  "engines": {
+    "node": ">= 6.5",
+    "npm": ">= 3"
+  }
+}
