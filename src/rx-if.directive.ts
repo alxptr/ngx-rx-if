@@ -13,6 +13,8 @@ import 'rxjs/add/operator/distinctUntilChanged';
 
 import { RxIfConfig, IElseMessageComponent } from './rx-if.interface';
 
+import { RxIfElseMessageComponent } from './rx-if-else-message.component';
+
 @Directive({
   selector: '[rxIf]'
 })
@@ -56,10 +58,16 @@ export class RxIfDirective implements OnDestroy {
     if (result) {
       this._viewContainer.createEmbeddedView(this.templateRef);
     } else {
-      const component = this._viewContainer.createComponent(
-        this.componentFactoryResolver.resolveComponentFactory(this.config.elseMsgCmp)
+      const component: any = this._viewContainer.createComponent(
+        this.componentFactoryResolver.resolveComponentFactory(
+          this.config.elseMsg ? RxIfElseMessageComponent : this.config.elseMsgCmp
+        )
       );
-      (component.instance as IElseMessageComponent).ctx = this.config.elseMsgCmpCtx;
+      if (this.config.elseMsg) {
+        component.instance.message = this.config.elseMsg;
+      } else {
+        (component.instance as IElseMessageComponent).ctx = this.config.elseMsgCmpCtx;
+      }
     }
   }
 
