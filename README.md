@@ -19,6 +19,12 @@ import { RxIfModule } from 'ngx-rx-if';
 })
 ```
 
+## Demo
+
+[Live demo](https://apoterenko.github.io/ngx-rx-if)
+1. Based on angular-cli
+2. npm run build -- -prod  
+
 ## Usage
 
 ```html
@@ -134,12 +140,6 @@ export function permissionReducer(state = DEFAULT_STATE, action: Action): IAppPe
   }
 }
 ```
-
-## Demo
-
-[Live demo](https://apoterenko.github.io/ngx-rx-if)  
-1. Based on angular-cli  
-2. npm run build -- -prod  
 
 ## Preview
 
