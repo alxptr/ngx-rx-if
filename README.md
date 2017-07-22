@@ -19,6 +19,12 @@ import { RxIfModule } from 'ngx-rx-if';
 })
 ```
 
+## Preview
+
+![state1](preview/state1.png)
+
+![state2](preview/state2.png)
+
 ## License
 
 Licensed under MIT.
