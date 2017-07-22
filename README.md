@@ -9,10 +9,13 @@ npm install ngx-rx-if --save
 ```
 
 ```typescript
-import { NgxRxIfModule } from 'ngx-rx-if';
+import { RxIfModule } from 'ngx-rx-if';
 
 @NgModule({
-    imports: [NgxRxIfModule.forRoot()]
+    imports: [
+        ...,
+        RxIfModule.forRoot(),
+    ]
 })
 ```
 

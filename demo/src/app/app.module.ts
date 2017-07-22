@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { RxIfModule } from './rx-if.module';
+import { RxIfModule } from 'ngx-rx-if';
 
 import { permissionReducer } from './permission/permission.reducer';
 import { PermissionService } from './permission/permission.service';
