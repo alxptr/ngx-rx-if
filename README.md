@@ -19,11 +19,16 @@ import { RxIfModule } from 'ngx-rx-if';
 })
 ```
 
+## Demo
+
+[Live demo](https://apoterenko.github.io/ngx-rx-if)  
+1. Based on angular-cli  
+2. npm run build -- -prod  
+
 ## Preview
 
-![state1](preview/state1.png)
-
-![state2](preview/state2.png)
+![state1](preview/state1.png)  
+![state2](preview/state2.png)  
 
 ## License
 
