@@ -1,14 +1,15 @@
 import { Type } from '@angular/core';
 
-export interface IRxIfFallbackMessageComponent {
+export interface IElseMessageComponent {
   ctx: any;
 }
 
-export interface IRxIfFallbackMessageComponentCtor extends Type<any>, IRxIfFallbackMessageComponent {
+export interface IElseMessageComponentCtor extends Type<any>, IElseMessageComponent {
 }
 
 export interface RxIfConfig {
-  storePath: string;
-  fallbackMessageCmp: IRxIfFallbackMessageComponentCtor;
-  fallbackMessageCmpCtx: any;
+  bindTo: string;
+  elseMsg: string;
+  elseMsgCmp: IElseMessageComponentCtor;
+  elseMsgCmpCtx: any;
 }

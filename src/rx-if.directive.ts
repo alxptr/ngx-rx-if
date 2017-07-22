@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { RxIfConfig, IRxIfFallbackMessageComponent } from './rx-if.interface';
+import { RxIfConfig, IElseMessageComponent } from './rx-if.interface';
 
 @Directive({
   selector: '[rxIf]'
@@ -27,7 +27,8 @@ export class RxIfDirective implements OnDestroy {
     this.ngOnDestroy();
 
     this.subscription = this.store
-      .select(state => this.extractStatePoint(state))
+      // We cannot use the ".select(...this.config.bindTo.split('.'))"
+      .select(state => this.extractBindingFromState(state))
       .map(Boolean)
       .distinctUntilChanged()
       .subscribe((result: boolean) => this.updateView(result));
@@ -56,14 +57,14 @@ export class RxIfDirective implements OnDestroy {
       this._viewContainer.createEmbeddedView(this.templateRef);
     } else {
       const component = this._viewContainer.createComponent(
-        this.componentFactoryResolver.resolveComponentFactory(this.config.fallbackMessageCmp)
+        this.componentFactoryResolver.resolveComponentFactory(this.config.elseMsgCmp)
       );
-      (component.instance as IRxIfFallbackMessageComponent).ctx = this.config.fallbackMessageCmpCtx;
+      (component.instance as IElseMessageComponent).ctx = this.config.elseMsgCmpCtx;
     }
   }
 
-  private extractStatePoint(state: any): any {
-    return this.config.storePath
+  private extractBindingFromState(state: any): any {
+    return this.config.bindTo
       .split('.')
       .reduce(
         (acc, key) => typeof acc === 'string' ? (state && state[acc] ? state[acc][key] : null) : (acc ? acc[key] : null)
