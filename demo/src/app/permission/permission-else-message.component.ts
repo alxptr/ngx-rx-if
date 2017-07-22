@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IElseMessageComponent } from '../rx-if.interface';
+import { IElseMessageComponent } from 'ngx-rx-if';
 
 @Component({
   selector: 'permission-else-message',
